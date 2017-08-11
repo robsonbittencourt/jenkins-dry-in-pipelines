@@ -28,6 +28,7 @@ The examples in this repository assume that the option has been checked, so the 
 | **Description** | Stop the pipeline execution and request to user inform a tag |    
 | **Parameters**  | None |
 | **Return**      | The selected tag |
+| **Observation** | This function has a 10 minutes timeout. If a tag is not selected the pipeline is canceled | 
 
 **Example of use:**
 
