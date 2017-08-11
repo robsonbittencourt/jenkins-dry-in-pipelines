@@ -42,6 +42,93 @@ node {
 }
 ```
 
+-------------------------------------------------------------------------------------------------------------------
+
+| **Name**        | mvn                 |
+|-----------------|---------------------| 
+| **Description** | Execute a maven command |    
+| **Parameters**  | mavenCommand, jdkName (optional), mavenName(optional) |
+| **Return**      | None |
+| **Observation** | In command parameter *mvn* isn't necessary. *jdkName* and *mavenName* has *jdk* and *maven* as default value. If your Jenkins use another values, you should let them know. | 
+
+**Example of use:**
+
+```
+/*With default values*/
+node {
+    stage("Maven package") {
+      mvn "clean package"
+    }
+}
+
+/*Without default values*/
+node {
+    stage("Maven package") {
+      mvn("clean package") {
+        jdkName = "jdk8"
+        mavenName = "maven3.5"
+      }
+    }
+}
+```
+
+-------------------------------------------------------------------------------------------------------------------
+
+| **Name**        | mvnPackage          |
+|-----------------|---------------------| 
+| **Description** | Execute maven package goal |    
+| **Parameters**  | jdkName (optional), mavenName(optional) |
+| **Return**      | None |
+| **Observation** | *jdkName* and *mavenName* has *jdk* and *maven* as default value. If your Jenkins use another values, you should let them know. | 
+
+**Example of use:**
+
+```
+node {
+    stage("Maven package") {
+      mvnPackage()
+    }
+}
+```
+
+-------------------------------------------------------------------------------------------------------------------
+
+| **Name**        | mvnTest             |
+|-----------------|---------------------| 
+| **Description** | Execute maven test goal |    
+| **Parameters**  | jdkName (optional), mavenName(optional) |
+| **Return**      | None |
+| **Observation** | *jdkName* and *mavenName* has *jdk* and *maven* as default value. If your Jenkins use another values, you should let them know. | 
+
+**Example of use:**
+
+```
+node {
+    stage("Maven test") {
+      mvnTest()
+    }
+}
+```
+
+-------------------------------------------------------------------------------------------------------------------
+
+| **Name**        | mvnInstall          |
+|-----------------|---------------------| 
+| **Description** | Execute maven install goal |    
+| **Parameters**  | jdkName (optional), mavenName(optional) |
+| **Return**      | None |
+| **Observation** | *jdkName* and *mavenName* has *jdk* and *maven* as default value. If your Jenkins use another values, you should let them know. | 
+
+**Example of use:**
+
+```
+node {
+    stage("Maven install") {
+      mvnInstall()
+    }
+}
+```
+
 ## Contributing
 If you have some function in your pipelines that you believe is generic enough feel free to submit a Pull Request.
 
